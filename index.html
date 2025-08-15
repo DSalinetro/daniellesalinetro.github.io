@@ -1,67 +1,573 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Danielle Salinetro · Portfolio</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f8f8f8;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #222;
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-    main {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      margin: 15px 0;
-    }
-    a {
-      display: block;
-      background-color: #fff;
-      padding: 15px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      color: #222;
-      transition: background-color 0.2s ease;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    a:hover {
-      background-color: #f0f0f0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danielle Salinetro - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, white 0%, #fafafa 100%);
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #D4967D 0%, #bcc5cd 100%);
+        }
+
+        .personal-logo-hero {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid #D4967D;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+
+        .personal-logo-hero img {
+            width: 85%;
+            height: 85%;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            color: #D4967D;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #6c757d;
+            margin-bottom: 30px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+
+        .skills-badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .skill-badge {
+            background: linear-gradient(135deg, #D4967D 0%, #bcc5cd 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-badge:hover {
+            transform: translateY(-3px);
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cta-primary {
+            background: linear-gradient(135deg, #D4967D 0%, #bcc5cd 100%);
+            color: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        .cta-secondary {
+            background: white;
+            color: #6c757d;
+            border: 2px solid #D4967D;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .cta-secondary:hover {
+            background: #D4967D;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            color: #D4967D;
+            margin-bottom: 60px;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #D4967D 0%, #bcc5cd 100%);
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, white 0%, #fafafa 100%);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #D4967D 0%, #bcc5cd 100%);
+        }
+
+        .project-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+
+        .project-image {
+            height: 250px;
+            background: linear-gradient(135deg, #D4967D 0%, #bcc5cd 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: rotate(45deg);
+        }
+
+        .project-content {
+            padding: 35px;
+        }
+
+        .project-title {
+            font-size: 1.6rem;
+            color: #D4967D;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .project-type {
+            color: #6c757d;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .project-description {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .project-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+
+        .skill-tag {
+            background: rgba(188, 197, 205, 0.15);
+            color: #6c757d;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .project-button {
+            background: linear-gradient(135deg, #D4967D 0%, #bcc5cd 100%);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .project-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .about-section {
+            background: linear-gradient(135deg, white 0%, #fafafa 100%);
+            padding: 60px 40px;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #D4967D 0%, #bcc5cd 100%);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-content h3 {
+            font-size: 2.2rem;
+            color: #D4967D;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .about-content p {
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .contact-section {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            color: #6c757d;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item:hover {
+            color: #D4967D;
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #D4967D 0%, #bcc5cd 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .contact-info { flex-direction: column; gap: 20px; }
+            .skills-badges { gap: 10px; }
+            .skill-badge { font-size: 0.9rem; padding: 10px 20px; }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Danielle Salinetro · Portfolio</h1>
-  </header>
-  <main>
-    <ul>
-     <li><a href="The-State-of-Creativity.html">The State of Creativity</a></li>
-<li><a href="Digital-Marketing-Campaign.html">Digital Marketing Campaign</a></li>
-<li><a href="Website-UI-Package.html">Website UI Package</a></li>
-<li><a href="Print-Collateral-Suite.html">Print Collateral Suite</a></li>
-<li><a href="Empathy-Driven-Design-Workshop.html">Empathy-Driven Design Workshop</a></li>
-    </ul>
-  </main>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="personal-logo-hero">
+                <img src="https://i.imgur.com/LxgORdC.png" alt="Danielle Salinetro - Designer">
+            </div>
+            <h1 class="hero-title">Danielle Salinetro</h1>
+            <p class="hero-subtitle">Empathy-Driven Designer</p>
+            <p class="hero-description">
+                I bridge creativity and analytics to create meaningful design solutions. Specializing in data visualization, brand identity, and empathy-driven design for mental health and creative wellness.
+            </p>
+            <div class="skills-badges">
+                <span class="skill-badge">Data Visualization</span>
+                <span class="skill-badge">Brand Identity</span>
+                <span class="skill-badge">UX/UI Design</span>
+                <span class="skill-badge">Design Strategy</span>
+                <span class="skill-badge">Creative Wellness</span>
+            </div>
+            <div class="cta-buttons">
+                <a href="#projects" class="cta-button cta-primary">View My Work</a>
+                <a href="#contact" class="cta-button cta-secondary">Get In Touch</a>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                
+                <!-- The State of Creativity -->
+                <div class="project-card">
+                    <div class="featured-badge">Featured</div>
+                    <div class="project-image">
+                        <div style="position: relative; z-index: 2;">📊 Data Visualization Excellence</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-type">Data Visualization</div>
+                        <h3 class="project-title">The State of Creativity</h3>
+                        <p class="project-description">
+                            Comprehensive data visualization revealing mental health trends in creative industries. Transforming complex research into compelling visual narratives that drive awareness and action.
+                        </p>
+                        <div class="project-skills">
+                            <span class="skill-tag">Data Analysis</span>
+                            <span class="skill-tag">Infographic Design</span>
+                            <span class="skill-tag">Research Visualization</span>
+                            <span class="skill-tag">Interactive Charts</span>
+                        </div>
+                        <a href="The-State-of-Creativity.html" class="project-button">View Case Study</a>
+                    </div>
+                </div>
+
+                <!-- Hearts & Minds Foundation -->
+                <div class="project-card">
+                    <div class="featured-badge">Featured</div>
+                    <div class="project-image">
+                        <div style="position: relative; z-index: 2;">🎨 Brand Identity System</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-type">Brand Identity</div>
+                        <h3 class="project-title">Hearts & Minds Foundation</h3>
+                        <p class="project-description">
+                            Complete brand identity system for mental health foundation. Empathy-driven design creating trust, connection, and hope through warm, approachable visual language.
+                        </p>
+                        <div class="project-skills">
+                            <span class="skill-tag">Logo Design</span>
+                            <span class="skill-tag">Brand Strategy</span>
+                            <span class="skill-tag">Print Design</span>
+                            <span class="skill-tag">Visual Identity</span>
+                        </div>
+                        <a href="Hearts-Minds-Foundation.html" class="project-button">View Case Study</a>
+                    </div>
+                </div>
+
+                <!-- Digital Marketing Campaign -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div style="position: relative; z-index: 2;">📱 Digital Campaign</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-type">Digital Marketing</div>
+                        <h3 class="project-title">Creative Wellness Week</h3>
+                        <p class="project-description">
+                            Strategic digital marketing campaign promoting mental health awareness. Complete ecosystem spanning social media, email marketing, and interactive experiences.
+                        </p>
+                        <div class="project-skills">
+                            <span class="skill-tag">Campaign Strategy</span>
+                            <span class="skill-tag">Social Media</span>
+                            <span class="skill-tag">Email Design</span>
+                            <span class="skill-tag">Digital Marketing</span>
+                        </div>
+                        <a href="Digital-Marketing-Campaign.html" class="project-button">View Case Study</a>
+                    </div>
+                </div>
+
+                <!-- Website UI Package -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div style="position: relative; z-index: 2;">💻 UX/UI Design</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-type">Web Design</div>
+                        <h3 class="project-title">Creative Therapy Platform</h3>
+                        <p class="project-description">
+                            User interface design for mental health platform serving creative professionals. Responsive web and mobile interfaces prioritizing accessibility and trust.
+                        </p>
+                        <div class="project-skills">
+                            <span class="skill-tag">UI/UX Design</span>
+                            <span class="skill-tag">Responsive Design</span>
+                            <span class="skill-tag">User Research</span>
+                            <span class="skill-tag">Accessibility</span>
+                        </div>
+                        <a href="Website-UI-Package.html" class="project-button">View Case Study</a>
+                    </div>
+                </div>
+
+                <!-- Presentation Template -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div style="position: relative; z-index: 2;">📋 Presentation Design</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-type">Presentation Design</div>
+                        <h3 class="project-title">Design Workshop Templates</h3>
+                        <p class="project-description">
+                            Professional presentation template system for design education. Scalable slide library supporting workshops, conferences, and corporate training.
+                        </p>
+                        <div class="project-skills">
+                            <span class="skill-tag">Template Design</span>
+                            <span class="skill-tag">Educational Design</span>
+                            <span class="skill-tag">Brand Systems</span>
+                            <span class="skill-tag">Visual Communication</span>
+                        </div>
+                        <a href="Empathy-Driven-Design-Workshop.html" class="project-button">View Case Study</a>
+                    </div>
+                </div>
+
+                <!-- Print Collateral -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div style="position: relative; z-index: 2;">🖨️ Print Design</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-type">Print Design</div>
+                        <h3 class="project-title">Conference Collateral Suite</h3>
+                        <p class="project-description">
+                            Complete print design system for wellness design conference. Marketing materials, event collateral, and brand applications demonstrating print expertise.
+                        </p>
+                        <div class="project-skills">
+                            <span class="skill-tag">Print Design</span>
+                            <span class="skill-tag">Event Materials</span>
+                            <span class="skill-tag">Production Design</span>
+                            <span class="skill-tag">Brand Applications</span>
+                        </div>
+                        <a href="Print-Collateral-Suite.html" class="project-button">View Case Study</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <div class="about-section">
+            <div class="about-content">
+                <h3>Design with Purpose</h3>
+                <p>
+                    I believe great design happens at the intersection of creativity, data, and human empathy. My approach combines analytical thinking with empathy-driven design to create solutions that are both beautiful and meaningful.
+                </p>
+                <p>
+                    Specializing in mental health and creative wellness, I help organizations communicate with clarity, build trust, and create positive impact through strategic design thinking.
+                </p>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <h2 class="section-title">Let's Create Together</h2>
+            <p style="font-size: 1.2rem; color: #666; margin-bottom: 20px;">
+                Ready to bring your vision to life? I'd love to hear about your project.
+            </p>
+            <div class="contact-info">
+                <a href="mailto:your-email@example.com" class="contact-item">✉️ Email Me</a>
+                <a href="https://linkedin.com/in/yourprofile" class="contact-item">💼 LinkedIn</a>
+                <a href="https://behance.net/yourprofile" class="contact-item">🎨 Behance</a>
+                <a href="tel:+1234567890" class="contact-item">📞 Call Me</a>
+            </div>
+        </section>
+    </div>
 </body>
 </html>
