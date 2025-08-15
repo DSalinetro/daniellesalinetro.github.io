@@ -7,11 +7,24 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
+    :root{
+      --ink:#303636;
+      --sub:#666;
+      --bg1:#E5E3DC;
+      --bg2:#F8F6F0;
+      --sage:#495A58;
+      --clay:#D4967D;
+      --clay-dark:#C8856B;
+      --card:#ffffff;
+      --shadow:0 10px 30px rgba(0,0,0,.1);
+      --radius:20px;
+    }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
-      color: #303636;
-      background: linear-gradient(135deg, #E5E3DC 0%, #F8F6F0 100%);
+      color: var(--ink);
+      background: linear-gradient(135deg, var(--bg1) 0%, var(--bg2) 100%);
     }
 
     /* Back to portfolio link */
@@ -19,13 +32,18 @@
       display: inline-block;
       margin: 20px;
       font-size: 1rem;
-      color: #495A58;
+      color: var(--sage);
       text-decoration: none;
-      border-left: 4px solid #D4967D;
-      padding-left: 10px;
-      transition: color 0.3s ease;
+      border-left: 4px solid var(--clay);
+      padding: 6px 0 6px 12px;
+      transition: color 0.25s ease;
+      outline: none;
     }
-    .back-link:hover { color: #D4967D; }
+    .back-link:hover { color: var(--clay); }
+    .back-link:focus-visible {
+      box-shadow: 0 0 0 3px rgba(212,150,125,.35);
+      border-radius: 6px;
+    }
 
     .container {
       max-width: 1400px;
@@ -37,9 +55,9 @@
       text-align: center;
       margin-bottom: 60px;
       padding: 60px 40px;
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
     .personal-logo-space {
@@ -55,7 +73,7 @@
     .hero h1 {
       font-size: 2.8rem;
       margin-bottom: 20px;
-      background: linear-gradient(135deg, #D4967D, #495A58);
+      background: linear-gradient(135deg, var(--clay), var(--sage));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -64,15 +82,15 @@
 
     .hero p {
       font-size: 1.2rem;
-      color: #666;
+      color: var(--sub);
       max-width: 800px;
       margin: 0 auto;
     }
 
     .campaign-overview {
-      background: white;
+      background: var(--card);
       padding: 50px 40px;
-      border-radius: 20px;
+      border-radius: var(--radius);
       box-shadow: 0 8px 25px rgba(0,0,0,0.1);
       margin-bottom: 60px;
     }
@@ -85,20 +103,20 @@
 
     .overview-item {
       padding: 25px;
-      background: linear-gradient(135deg, #F8F6F0, #E5E3DC);
+      background: linear-gradient(135deg, var(--bg2), var(--bg1));
       border-radius: 12px;
-      border-left: 4px solid #D4967D;
+      border-left: 4px solid var(--clay);
     }
 
     .overview-item h3 {
-      color: #495A58;
+      color: var(--sage);
       font-size: 1.2rem;
       margin-bottom: 12px;
       font-weight: 600;
     }
 
     .overview-item p {
-      color: #666;
+      color: var(--sub);
       font-size: 0.95rem;
       line-height: 1.6;
     }
@@ -110,15 +128,15 @@
     }
 
     .marketing-section {
-      background: white;
-      border-radius: 20px;
+      background: var(--card);
+      border-radius: var(--radius);
       box-shadow: 0 8px 25px rgba(0,0,0,0.1);
       overflow: hidden;
     }
 
     .section-header {
       padding: 30px 40px;
-      background: linear-gradient(135deg, #495A58, #3A4746);
+      background: linear-gradient(135deg, var(--sage), #3A4746);
       color: white;
     }
 
@@ -142,17 +160,16 @@
     }
 
     .social-post {
-      background: #F8F6F0;
+      background: var(--bg2);
       border-radius: 15px;
       overflow: hidden;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
     }
-
     .social-post:hover { transform: translateY(-5px); }
 
     .post-header {
-      background: linear-gradient(135deg, #D4967D, #C8856B);
+      background: linear-gradient(135deg, var(--clay), var(--clay-dark));
       color: white;
       padding: 20px;
       text-align: center;
@@ -172,20 +189,20 @@
     .post-stat {
       font-size: 2.5rem;
       font-weight: bold;
-      color: #495A58;
+      color: var(--sage);
       text-align: center;
       margin-bottom: 10px;
     }
 
     .post-description {
-      color: #666;
+      color: var(--sub);
       font-size: 0.9rem;
       text-align: center;
       margin-bottom: 15px;
     }
 
     .post-cta {
-      background: #495A58;
+      background: var(--sage);
       color: white;
       padding: 10px 20px;
       border-radius: 25px;
@@ -197,7 +214,7 @@
     }
 
     .email-newsletter {
-      background: #F8F6F0;
+      background: var(--bg2);
       border-radius: 15px;
       overflow: hidden;
       margin-top: 30px;
@@ -206,44 +223,33 @@
       transition: all 0.3s ease;
       display: block;
     }
-
     .email-newsletter:hover {
       transform: translateY(-5px);
       box-shadow: 0 15px 35px rgba(0,0,0,0.2);
     }
-
     .email-newsletter:hover .email-header {
-      background: linear-gradient(135deg, #D4967D, #C8856B);
+      background: linear-gradient(135deg, var(--clay), var(--clay-dark));
     }
 
     .email-header {
-      background: linear-gradient(135deg, #495A58, #3A4746);
+      background: linear-gradient(135deg, var(--sage), #3A4746);
       color: white;
       padding: 30px;
       text-align: center;
     }
-
     .email-header h3 { font-size: 1.4rem; margin-bottom: 10px; }
     .email-header .subtitle { opacity: 0.9; font-size: 0.9rem; }
 
     .email-body { padding: 30px; background: white; }
-
     .email-article {
       margin-bottom: 25px;
       padding-bottom: 25px;
-      border-bottom: 1px solid #E5E3DC;
+      border-bottom: 1px solid var(--bg1);
     }
-
     .email-article:last-child { border-bottom: none; margin-bottom: 0; }
 
-    .article-title {
-      color: #495A58;
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .article-excerpt { color: #666; font-size: 0.9rem; line-height: 1.6; }
+    .article-title { color: var(--sage); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+    .article-excerpt { color: var(--sub); font-size: 0.9rem; line-height: 1.6; }
 
     .web-banners {
       display: grid;
@@ -264,10 +270,9 @@
       color: white;
       text-align: center;
     }
-
-    .banner-leaderboard { background: linear-gradient(135deg, #D4967D, #C8856B); }
-    .banner-square     { background: linear-gradient(135deg, #495A58, #3A4746); }
-    .banner-skyscraper { background: linear-gradient(135deg, #D4967D, #495A58); }
+    .banner-leaderboard { background: linear-gradient(135deg, var(--clay), var(--clay-dark)); }
+    .banner-square     { background: linear-gradient(135deg, var(--sage), #3A4746); }
+    .banner-skyscraper { background: linear-gradient(135deg, var(--clay), var(--sage)); }
 
     .banner-content h4 { font-size: 1.3rem; margin-bottom: 8px; font-weight: 600; }
     .banner-content p  { font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px; }
@@ -283,47 +288,42 @@
     }
 
     .strategy-section {
-      background: linear-gradient(135deg, #495A58, #3A4746);
+      background: linear-gradient(135deg, var(--sage), #3A4746);
       color: white;
       padding: 50px 40px;
-      border-radius: 20px;
+      border-radius: var(--radius);
       margin-top: 60px;
     }
-
     .strategy-section h2 {
       font-size: 2rem;
       margin-bottom: 25px;
       text-align: center;
     }
-
     .strategy-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 25px;
       margin-top: 30px;
     }
-
     .strategy-item {
       background: rgba(255,255,255,0.1);
       padding: 25px;
       border-radius: 12px;
       backdrop-filter: blur(10px);
     }
-
-    .strategy-item h4 {
-      color: #D4967D;
-      margin-bottom: 12px;
-      font-size: 1.1rem;
-    }
-
+    .strategy-item h4 { color: var(--clay); margin-bottom: 12px; font-size: 1.1rem; }
     .strategy-item p { font-size: 0.95rem; line-height: 1.6; }
 
     @media (max-width: 768px) {
       .hero h1 { font-size: 2.2rem; }
       .container { padding: 20px 15px; }
       .section-content { padding: 25px; }
-      .social-posts { grid-template-columns: 1fr; }
-      .web-banners { grid-template-columns: 1fr; }
+      .social-posts, .web-banners { grid-template-columns: 1fr; }
+      .personal-logo-space { width: 300px; height: 180px; }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      * { transition: none !important; }
     }
   </style>
 </head>
@@ -332,102 +332,101 @@
   <a href="index.html" class="back-link">← Back to Portfolio</a>
 
   <div class="container">
-    <div class="hero">
+    <header class="hero">
       <div class="personal-logo-space">
-        <!-- REPLACE THIS IMAGE URL WITH YOUR HEARTS & MINDS LOGO -->
-        <img src="https://i.imgur.com/LxgORdC.png" alt="Your Name - Designer" style="width: 100%; height: 100%; object-fit: contain;">
+        <img src="https://i.imgur.com/LxgORdC.png" alt="Hearts & Minds Foundation logo" style="width:100%;height:100%;object-fit:contain;">
       </div>
       <h1>Creative Wellness Week</h1>
-      <p>Digital Marketing Campaign - Supporting creative professionals through mental health awareness with data-driven messaging and empathy-centered design approach.</p>
-    </div>
+      <p>Digital Marketing Campaign — supporting creative professionals through mental health awareness with data-driven messaging and empathy-centered design.</p>
+    </header>
 
-    <div class="campaign-overview">
+    <section class="campaign-overview" aria-label="Campaign overview">
       <div class="overview-grid">
-        <div class="overview-item">
+        <article class="overview-item">
           <h3>Campaign Goal</h3>
           <p>Raise awareness about mental health challenges in creative industries while promoting wellness resources and community support for designers, artists, and creative professionals.</p>
-        </div>
-        <div class="overview-item">
+        </article>
+        <article class="overview-item">
           <h3>Target Audience</h3>
-          <p>Creative professionals aged 25-45 experiencing work-related stress, burnout, or isolation. Primary focus on freelancers, agency workers, and independent artists.</p>
-        </div>
-        <div class="overview-item">
+          <p>Creative professionals aged 25–45 experiencing work-related stress, burnout, or isolation. Primary focus on freelancers, agency workers, and independent artists.</p>
+        </article>
+        <article class="overview-item">
           <h3>Key Message</h3>
-          <p>Your creativity and mental wellness are interconnected. Professional support designed specifically for creative minds can help you thrive both personally and professionally.</p>
-        </div>
-        <div class="overview-item">
+          <p>Your creativity and mental wellness are interconnected. Professional support designed specifically for creative minds helps you thrive personally and professionally.</p>
+        </article>
+        <article class="overview-item">
           <h3>Campaign Strategy</h3>
-          <p>Data-driven content that validates creative professionals' experiences while providing actionable resources, community connection, and professional mental health support.</p>
-        </div>
+          <p>Data-driven content that validates creative professionals’ experiences while providing actionable resources, community connection, and professional mental health support.</p>
+        </article>
       </div>
-    </div>
+    </section>
 
-    <div class="marketing-grid">
-      <div class="marketing-section">
+    <main class="marketing-grid">
+      <section class="marketing-section" aria-label="Social media campaign">
         <div class="section-header">
           <h2>Social Media Campaign</h2>
-          <p>Instagram and LinkedIn posts designed to engage creative professionals with relatable content and valuable insights</p>
+          <p>Instagram and LinkedIn posts designed to engage creative professionals with relatable content and valuable insights.</p>
         </div>
         <div class="section-content">
           <div class="social-posts">
-            <div class="social-post">
+            <article class="social-post">
               <div class="post-header">
                 <h4>Mental Health Awareness</h4>
                 <div class="platform">Instagram Post</div>
               </div>
               <div class="post-content">
                 <div class="post-stat">85%</div>
-                <div class="post-description">of creative professionals experience high stress levels - you're not alone in feeling overwhelmed.</div>
+                <p class="post-description">of creative professionals experience high stress levels — you’re not alone.</p>
                 <div class="post-cta">Find Your Support Community</div>
               </div>
-            </div>
+            </article>
 
-            <div class="social-post">
+            <article class="social-post">
               <div class="post-header">
                 <h4>Financial Wellness</h4>
                 <div class="platform">LinkedIn Post</div>
               </div>
               <div class="post-content">
                 <div class="post-stat">78%</div>
-                <div class="post-description">Financial anxiety directly impacts creative output. Learn strategies for financial wellness in creative careers.</div>
+                <p class="post-description">Financial anxiety impacts creative output. Learn strategies for financial wellness in creative careers.</p>
                 <div class="post-cta">Download Free Guide</div>
               </div>
-            </div>
+            </article>
 
-            <div class="social-post">
+            <article class="social-post">
               <div class="post-header">
                 <h4>Career Growth</h4>
                 <div class="platform">Instagram Story</div>
               </div>
               <div class="post-content">
                 <div class="post-stat">43%</div>
-                <div class="post-description">higher salaries for designers with data analysis skills. Invest in your professional development.</div>
+                <p class="post-description">higher salaries for designers with data-analysis skills. Invest in your development.</p>
                 <div class="post-cta">Explore Skill Building</div>
               </div>
-            </div>
+            </article>
 
-            <div class="social-post">
+            <article class="social-post">
               <div class="post-header">
                 <h4>Remote Work Support</h4>
                 <div class="platform">LinkedIn Article</div>
               </div>
               <div class="post-content">
                 <div class="post-stat">67%</div>
-                <div class="post-description">of creatives now work remotely. Discover strategies for maintaining wellness and creativity from home.</div>
+                <p class="post-description">of creatives work remotely. Discover strategies to maintain wellness and creativity from home.</p>
                 <div class="post-cta">Read Full Article</div>
               </div>
-            </div>
+            </article>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="marketing-section">
+      <section class="marketing-section" aria-label="Email newsletter design">
         <div class="section-header">
           <h2>Email Newsletter Design</h2>
-          <p>Weekly newsletter providing valuable resources, community highlights, and wellness tips for creative professionals</p>
+          <p>Weekly newsletter providing resources, community highlights, and wellness tips for creative professionals.</p>
         </div>
         <div class="section-content">
-          <div class="email-newsletter">
+          <a class="email-newsletter" href="#" aria-label="Preview of Creative Wellness Weekly email">
             <div class="email-header">
               <h3>Creative Wellness Weekly</h3>
               <div class="subtitle">Your source for mental health resources in creative industries</div>
@@ -435,32 +434,32 @@
             <div class="email-body">
               <div class="email-article">
                 <div class="article-title">This Week: Breaking the Burnout Cycle</div>
-                <div class="article-excerpt">New research shows that 72% of creative professionals have experienced burnout. Learn evidence-based strategies for recognition, prevention, and recovery specifically designed for creative minds...</div>
+                <div class="article-excerpt">New research shows 72% of creative professionals have experienced burnout. Learn evidence-based strategies for recognition, prevention, and recovery…</div>
               </div>
               <div class="email-article">
                 <div class="article-title">Community Spotlight: Designer Wellness Stories</div>
-                <div class="article-excerpt">Meet three designers who transformed their relationship with work-life balance while growing their careers. Their practical tips and honest insights about mental health in creative fields...</div>
+                <div class="article-excerpt">Meet three designers who transformed their work-life balance while growing their careers. Practical tips and honest insights…</div>
               </div>
               <div class="email-article">
                 <div class="article-title">Resource Round-up: Mental Health Apps for Creatives</div>
-                <div class="article-excerpt">Curated list of mental health tools designed with creative professionals in mind. From meditation apps that understand irregular schedules to therapy platforms with creative-friendly therapists...</div>
+                <div class="article-excerpt">A curated list of tools designed with creative professionals in mind — from meditation apps to therapy platforms…</div>
               </div>
             </div>
-          </div>
+          </a>
         </div>
-      </div>
+      </section>
 
-      <div class="marketing-section">
+      <section class="marketing-section" aria-label="Web banner series">
         <div class="section-header">
           <h2>Web Banner Series</h2>
-          <p>Display advertising for creative industry websites, job boards, and design publications</p>
+          <p>Display advertising for creative industry websites, job boards, and design publications.</p>
         </div>
         <div class="section-content">
           <div class="web-banners">
             <div class="banner banner-leaderboard">
               <div class="banner-content">
                 <h4>Creative Wellness Week</h4>
-                <p>Join thousands of creatives prioritizing their mental health</p>
+                <p>Join thousands of creatives prioritizing their mental health.</p>
                 <div class="banner-cta">Get Free Resources</div>
               </div>
             </div>
@@ -468,7 +467,7 @@
             <div class="banner banner-square">
               <div class="banner-content">
                 <h4>You're Not Alone</h4>
-                <p>85% of creatives experience high stress</p>
+                <p>85% of creatives experience high stress.</p>
                 <div class="banner-cta">Find Support</div>
               </div>
             </div>
@@ -476,44 +475,44 @@
             <div class="banner banner-skyscraper">
               <div class="banner-content">
                 <h4>Thrive Creatively</h4>
-                <p>Mental wellness resources for creative professionals</p>
+                <p>Mental wellness resources for creative professionals.</p>
                 <div class="banner-cta">Learn More</div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
 
-    <div class="strategy-section">
-      <h2>Campaign Strategy & Impact</h2>
+    <section class="strategy-section" aria-label="Campaign strategy and impact">
+      <h2>Campaign Strategy &amp; Impact</h2>
       <div class="strategy-grid">
-        <div class="strategy-item">
+        <article class="strategy-item">
           <h4>Data-Driven Messaging</h4>
-          <p>Using insights from our research to create messages that resonate with real experiences of creative professionals, building trust through validation and understanding.</p>
-        </div>
-        <div class="strategy-item">
+          <p>Use insights to craft messages that resonate with real experiences of creative professionals, building trust through validation and understanding.</p>
+        </article>
+        <article class="strategy-item">
           <h4>Multi-Platform Approach</h4>
-          <p>Coordinated campaign across social media, email, and web advertising ensures consistent messaging while adapting content format to each platform's unique audience behavior.</p>
-        </div>
-        <div class="strategy-item">
+          <p>Coordinated content across social, email, and web ads ensures consistent messaging tailored to each platform’s audience behavior.</p>
+        </article>
+        <article class="strategy-item">
           <h4>Empathy-Centered Design</h4>
-          <p>Visual design reflects the warmth and professionalism of the Hearts & Minds brand, creating emotional connection while maintaining credibility and trust.</p>
-        </div>
-        <div class="strategy-item">
+          <p>Visual design reflects the warmth and professionalism of the Hearts &amp; Minds brand, creating emotional connection while maintaining credibility.</p>
+        </article>
+        <article class="strategy-item">
           <h4>Community Building</h4>
-          <p>Campaign focuses on reducing isolation by highlighting shared experiences and connecting creative professionals with resources and each other.</p>
-        </div>
-        <div class="strategy-item">
+          <p>Reduce isolation by highlighting shared experiences and connecting creatives with resources and each other.</p>
+        </article>
+        <article class="strategy-item">
           <h4>Actionable Resources</h4>
-          <p>Every piece of content includes clear next steps, from downloadable guides to community connections, ensuring audience engagement translates to meaningful support.</p>
-        </div>
-        <div class="strategy-item">
+          <p>Every piece of content includes clear next steps so engagement translates into meaningful support.</p>
+        </article>
+        <article class="strategy-item">
           <h4>Professional Development</h4>
-          <p>Campaign balances mental health awareness with career growth messaging, showing how wellness and professional success are interconnected for creative professionals.</p>
-        </div>
+          <p>Balance mental-health awareness with career-growth messaging to show how wellness and success are interconnected.</p>
+        </article>
       </div>
-    </div>
+    </section>
   </div>
 </body>
 </html>
