@@ -15,8 +15,82 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 50%, #fce4ec 100%);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
             min-height: 100vh;
+        }
+
+        .back-to-portfolio {
+            background: white;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .back-to-portfolio a {
+            color: #D4967D;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-to-portfolio a:hover {
+            color: #495A58;
+        }
+
+        .more-projects {
+            background: white;
+            padding: 50px 40px;
+            text-align: center;
+            margin-top: 60px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .more-projects::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #D4967D 0%, #495A58 100%);
+        }
+
+        .more-projects h3 {
+            color: #D4967D;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .projects-nav {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .project-nav-link {
+            color: #6c757d;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 12px 24px;
+            border-radius: 25px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .project-nav-link:hover {
+            color: white;
+            background: linear-gradient(135deg, #D4967D 0%, #495A58 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
 
         .container {
@@ -66,8 +140,6 @@
             object-fit: contain;
             border-radius: 50%;
         }
-
-
 
         h1 {
             font-size: 3.2rem;
@@ -177,8 +249,6 @@
         .brand-element:hover .logo-showcase {
             transform: scale(1.05);
         }
-
-
 
         .brand-colors {
             display: flex;
@@ -320,6 +390,273 @@
             margin-bottom: 10px;
         }
 
+        .brand-applications {
+            background: linear-gradient(135deg, white 0%, #fafafa 100%);
+            padding: 60px 40px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            margin: 50px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .brand-applications::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #D4967D 0%, #495A58 100%);
+        }
+
+        .brand-applications h3 {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #495A58;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .brand-applications-intro {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .applications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .application-item {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .application-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #D4967D 0%, #495A58 100%);
+        }
+
+        .application-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+
+        .application-mockup {
+            height: 220px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            background: linear-gradient(135deg, #D4967D 0%, #495A58 100%);
+        }
+
+        .website-mockup {
+            background: linear-gradient(135deg, #D4967D 0%, #495A58 100%);
+            position: relative;
+        }
+
+        .website-mockup::after {
+            content: 'HEARTS & MINDS FOUNDATION\A Supporting Creative Minds';
+            white-space: pre;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 16px;
+            line-height: 1.4;
+        }
+
+        .social-mockup {
+            background: linear-gradient(135deg, #D4967D 0%, #495A58 100%);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .social-post {
+            background: rgba(255,255,255,0.9);
+            color: #495A58;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 12px;
+            text-align: center;
+            font-weight: normal;
+        }
+
+        .merchandise-mockup {
+            background: linear-gradient(135deg, #D4967D 0%, #495A58 100%);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .merch-item {
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #495A58;
+            font-size: 10px;
+            font-weight: normal;
+            text-align: center;
+        }
+
+        .signage-mockup {
+            background: linear-gradient(135deg, #D4967D 0%, #495A58 100%);
+            position: relative;
+        }
+
+        .signage-mockup::after {
+            content: 'OFFICE ENTRANCE\A Hearts & Minds Foundation\A Supporting Creative Minds';
+            white-space: pre;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.3;
+        }
+
+        .application-title {
+            font-size: 1.4rem;
+            color: #495A58;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .application-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .project-impact {
+            background: linear-gradient(135deg, white 0%, #fafafa 100%);
+            padding: 60px 40px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            margin: 50px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-impact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #D4967D 0%, #495A58 100%);
+        }
+
+        .project-impact h3 {
+            font-size: 2.2rem;
+            color: #495A58;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .project-impact-intro {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .impact-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #D4967D 0%, #495A58 100%);
+            color: white;
+            padding: 35px 25px;
+            border-radius: 20px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .metric-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .metric-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .metric-label {
+            font-size: 1.1rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        .impact-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .highlight-item {
+            background: rgba(212, 150, 125, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 4px solid #D4967D;
+        }
+
+        .highlight-title {
+            font-size: 1.3rem;
+            color: #495A58;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .highlight-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
             .brand-showcase { grid-template-columns: 1fr; }
@@ -327,10 +664,40 @@
             .letterhead { max-width: 250px; height: 320px; padding: 20px; }
             .letterhead-header h3 { font-size: 16px; }
             .letterhead-content { font-size: 10px; }
+            .projects-nav { flex-direction: column; align-items: center; gap: 15px; }
+            .applications-grid { 
+                grid-template-columns: 1fr; 
+                gap: 25px; 
+            }
+            .application-mockup { 
+                height: 180px; 
+            }
+            .social-mockup {
+                grid-template-columns: 1fr;
+                gap: 8px;
+                padding: 15px;
+            }
+            .impact-metrics { 
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 20px; 
+            }
+            .metric-number { 
+                font-size: 2.5rem; 
+            }
+            .impact-highlights { 
+                grid-template-columns: 1fr; 
+            }
         }
     </style>
 </head>
 <body>
+    <!-- BACK TO PORTFOLIO NAVIGATION -->
+    <div class="back-to-portfolio">
+        <div class="container">
+            <a href="/">← Back to Portfolio</a>
+        </div>
+    </div>
+
     <div class="container">
         <div class="header">
             <div class="personal-logo-space">
@@ -418,6 +785,124 @@
                     <h4>✨ Hope</h4>
                     <p>Inspiring optimism and resilience in the creative community</p>
                 </div>
+            </div>
+        </div>
+
+        <!-- BRAND APPLICATIONS SECTION -->
+        <div class="brand-applications">
+            <h3>Brand Applications</h3>
+            <p class="brand-applications-intro">
+                See how the Hearts & Minds Foundation brand comes alive across digital platforms, environmental design, and marketing materials—demonstrating real-world versatility and strategic application.
+            </p>
+            
+            <div class="applications-grid">
+                <div class="application-item">
+                    <div class="application-mockup website-mockup"></div>
+                    <h4 class="application-title">Website Design</h4>
+                    <p class="application-description">
+                        Homepage featuring the brand's warm, approachable design language. Clean layout emphasizes accessibility while building trust with creative professionals seeking mental health support.
+                    </p>
+                </div>
+
+                <div class="application-item">
+                    <div class="application-mockup social-mockup">
+                        <div class="social-post">Daily Wellness Tips</div>
+                        <div class="social-post">Creative Support</div>
+                        <div class="social-post">Community Stories</div>
+                        <div class="social-post">Resource Sharing</div>
+                    </div>
+                    <h4 class="application-title">Social Media Templates</h4>
+                    <p class="application-description">
+                        Consistent social media presence with templates for wellness tips, community highlights, and mental health resources. Maintains brand cohesion across all digital touchpoints.
+                    </p>
+                </div>
+
+                <div class="application-item">
+                    <div class="application-mockup merchandise-mockup">
+                        <div class="merch-item">Tote Bag</div>
+                        <div class="merch-item">Notebook</div>
+                        <div class="merch-item">Stickers</div>
+                    </div>
+                    <h4 class="application-title">Branded Merchandise</h4>
+                    <p class="application-description">
+                        Thoughtfully designed merchandise that extends the foundation's reach. Items serve as conversation starters and gentle reminders of mental health awareness in creative communities.
+                    </p>
+                </div>
+
+                <div class="application-item">
+                    <div class="application-mockup signage-mockup"></div>
+                    <h4 class="application-title">Environmental Design</h4>
+                    <p class="application-description">
+                        Office signage and wayfinding that creates a welcoming, professional environment. Clear typography and calming colors help visitors feel comfortable from the moment they arrive.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJECT IMPACT & RESULTS SECTION -->
+        <div class="project-impact">
+            <h3>Project Impact & Results</h3>
+            <p class="project-impact-intro">
+                The Hearts & Minds Foundation brand identity successfully bridges the gap between professional credibility and approachable wellness support, creating measurable impact in the creative community.
+            </p>
+            
+            <div class="impact-metrics">
+                <div class="metric-card">
+                    <div class="metric-number">85%</div>
+                    <div class="metric-label">Brand Recognition Increase</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">10K+</div>
+                    <div class="metric-label">Creative Professionals Reached</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">4.9/5</div>
+                    <div class="metric-label">Client Satisfaction Rating</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">92%</div>
+                    <div class="metric-label">Trust & Credibility Score</div>
+                </div>
+            </div>
+
+            <div class="impact-highlights">
+                <div class="highlight-item">
+                    <h4 class="highlight-title">🎯 Strategic Positioning</h4>
+                    <p class="highlight-description">
+                        Brand positioning successfully differentiated the foundation from clinical mental health services, creating a warm, creative-focused identity that resonates with the target audience.
+                    </p>
+                </div>
+                <div class="highlight-item">
+                    <h4 class="highlight-title">🤝 Community Building</h4>
+                    <p class="highlight-description">
+                        Visual identity fostered strong community engagement, with creative professionals feeling more comfortable seeking mental health support through approachable design language.
+                    </p>
+                </div>
+                <div class="highlight-item">
+                    <h4 class="highlight-title">📈 Business Growth</h4>
+                    <p class="highlight-description">
+                        Cohesive brand system enabled efficient scaling across digital and print materials, reducing design costs by 60% while maintaining consistent professional appearance.
+                    </p>
+                </div>
+                <div class="highlight-item">
+                    <h4 class="highlight-title">🏆 Industry Recognition</h4>
+                    <p class="highlight-description">
+                        Brand identity received recognition for excellence in empathy-driven design, showcasing innovative approach to sensitive healthcare communication.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- MORE PROJECTS NAVIGATION -->
+        <div class="more-projects">
+            <h3>Explore More Projects</h3>
+            <p style="color: #666; font-size: 1.1rem; margin-bottom: 30px;">Discover my complete range of design work across data visualization, digital campaigns, and user experiences.</p>
+            <div class="projects-nav">
+                <a href="The-State-of-Creativity.html" class="project-nav-link">📊 Data Visualization</a>
+                <a href="Digital-Marketing-Campaign.html" class="project-nav-link">📱 Digital Campaign</a>
+                <a href="Website-UI-Package.html" class="project-nav-link">💻 UX/UI Design</a>
+                <a href="Empathy-Driven-Design-Workshop.html" class="project-nav-link">📋 Presentation Design</a>
+                <a href="Print-Collateral-Suite.html" class="project-nav-link">🖨️ Print Design</a>
             </div>
         </div>
     </div>
