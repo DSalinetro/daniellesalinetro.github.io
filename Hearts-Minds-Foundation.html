@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hearts & Minds Foundation - Brand Identity System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 50%, #fce4ec 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 50px 30px;
+            background: linear-gradient(135deg, white 0%, #fafafa 100%);
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #D4967D 0%, #495A58 100%);
+        }
+
+        .personal-logo-space {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid #D4967D;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .personal-logo {
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+
+
+        h1 {
+            font-size: 3.2rem;
+            color: #495A58;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .tagline {
+            color: #D4967D;
+            font-size: 19px;
+            font-weight: 500;
+            margin-top: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .project-intro {
+            background: linear-gradient(135deg, white 0%, #fafafa 100%);
+            padding: 45px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-intro::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #D4967D 0%, #495A58 100%);
+        }
+
+        .project-intro h2 {
+            color: #495A58;
+            font-size: 2.3rem;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .project-intro p {
+            font-size: 1.25rem;
+            color: #666;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .brand-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .brand-element {
+            background: linear-gradient(135deg, white 0%, #fafafa 100%);
+            padding: 35px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .brand-element::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #D4967D 0%, #495A58 100%);
+        }
+
+        .brand-element:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 45px rgba(0,0,0,0.15);
+        }
+
+        .logo-showcase {
+            width: 240px;
+            height: 200px;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, #D4967D 0%, #c08660 30%, #495A58 100%);
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 26px;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1.1;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .brand-element:hover .logo-showcase {
+            transform: scale(1.05);
+        }
+
+
+
+        .brand-colors {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .color-swatch {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .color-swatch:hover {
+            transform: scale(1.1);
+        }
+
+        .clay { background: #D4967D; }
+        .sage { background: #495A58; }
+
+        .business-card {
+            width: 320px;
+            height: 200px;
+            background: linear-gradient(135deg, #D4967D 0%, #c08660 50%, #495A58 100%);
+            border-radius: 20px;
+            margin: 0 auto 25px;
+            position: relative;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .business-card:hover {
+            transform: scale(1.05);
+        }
+
+        .business-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: rotate(45deg);
+        }
+
+        .card-content {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+        }
+
+        .card-content h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .card-content p {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .letterhead {
+            width: 100%;
+            max-width: 280px;
+            height: 380px;
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            margin: 0 auto 20px;
+            position: relative;
+            padding: 25px;
+            overflow: hidden;
+        }
+
+        .letterhead-header {
+            border-bottom: 3px solid #D4967D;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .letterhead-header h3 {
+            color: #495A58;
+            font-size: 18px;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .letterhead-content {
+            color: #666;
+            line-height: 1.6;
+            font-size: 11px;
+        }
+
+        .letterhead-content p {
+            margin-bottom: 12px;
+        }
+
+        .brand-description {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
+            color: #495057;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .brand-description h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #495A58;
+        }
+
+        .brand-values {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .value-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            color: #495057;
+        }
+
+        .value-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .brand-showcase { grid-template-columns: 1fr; }
+            .business-card { width: 250px; height: 150px; }
+            .letterhead { max-width: 250px; height: 320px; padding: 20px; }
+            .letterhead-header h3 { font-size: 16px; }
+            .letterhead-content { font-size: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="personal-logo-space">
+                <img src="https://i.imgur.com/LxgORdC.png" alt="Danielle Salinetro - Designer" class="personal-logo">
+            </div>
+            <h1>Hearts & Minds Foundation</h1>
+            <p class="tagline">EMPATHY-LED DESIGN FOR CONNECTION AND WELLNESS</p>
+        </div>
+
+        <div class="project-intro">
+            <h2>Brand Identity System</h2>
+            <p>A comprehensive brand identity designed to bridge the gap between mental health resources and creative professionals. This empathy-driven design creates trust, connection, and hope through warm, approachable visual language.</p>
+        </div>
+
+        <div class="brand-showcase">
+            <div class="brand-element logo-card">
+                <div class="logo-showcase">
+                    <div style="position: absolute; top: -50%; right: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); transform: rotate(45deg);"></div>
+                    <div style="position: relative; z-index: 2;">
+                        HEARTS<br>&<br>MINDS<br><span style="font-size: 16px; font-weight: 400; opacity: 0.9;">FOUNDATION</span>
+                    </div>
+                </div>
+                <h3 style="color: #495A58; margin-bottom: 20px; font-size: 1.4rem; font-weight: 600;">Logo Design</h3>
+                <p style="color: #666; line-height: 1.7; margin-bottom: 25px;">Clean, modern wordmark representing care and connection. Professional typography that builds trust and communicates the foundation's mission clearly.</p>
+                <div class="brand-colors">
+                    <div class="color-swatch clay"></div>
+                    <div class="color-swatch sage"></div>
+                </div>
+            </div>
+
+            <div class="brand-element">
+                <div class="business-card">
+                    <div class="card-content">
+                        <h3>Dr. Sarah Chen</h3>
+                        <p>DIRECTOR OF CREATIVE WELLNESS</p>
+                        <p style="margin-top: 10px;">📧 sarah@heartsandminds.org</p>
+                        <p>📱 (555) 123-4567</p>
+                        <p>🌐 heartsandminds.org</p>
+                    </div>
+                </div>
+                <h3 style="color: #495A58; margin-bottom: 20px; font-size: 1.4rem; font-weight: 600;">Business Card Design</h3>
+                <p style="color: #666; line-height: 1.7;">Premium gradient finish with clean typography. Professional yet approachable design that builds immediate trust and credibility.</p>
+            </div>
+
+            <div class="brand-element">
+                <div class="letterhead">
+                    <div class="letterhead-header">
+                        <h3>HEARTS & MINDS FOUNDATION</h3>
+                        <p style="color: #D4967D;">Supporting Creative Minds</p>
+                        <p style="font-size: 12px; color: #666;">123 Creative Street, Arts Quarter • (555) 123-4567 • contact@heartsandminds.org</p>
+                    </div>
+                    <div class="letterhead-content">
+                        <p>Dear Creative Professional,</p>
+                        <br>
+                        <p>Welcome to Hearts & Minds Foundation, where we understand that creativity and mental wellness go hand in hand. Our mission is to provide comprehensive support, resources, and community for creative professionals navigating the unique challenges of their field.</p>
+                        <br>
+                        <p>We believe that when we care for the minds behind the art, the entire creative community flourishes.</p>
+                        <br>
+                        <p>Warmly,<br><strong>The Hearts & Minds Team</strong></p>
+                    </div>
+                </div>
+                <h3 style="color: #495A58; margin-bottom: 20px; font-size: 1.4rem; font-weight: 600;">Letterhead System</h3>
+                <p style="color: #666; line-height: 1.7;">Clean, professional correspondence design with consistent brand elements and warm, welcoming tone.</p>
+            </div>
+        </div>
+
+        <div class="brand-description">
+            <h3>Brand Philosophy</h3>
+            <p>Hearts & Minds Foundation bridges the gap between creative expression and mental wellness. Our brand identity reflects this mission through warm, connecting colors and symbols that represent both individual care and community support.</p>
+            
+            <div class="brand-values">
+                <div class="value-card">
+                    <h4>🤝 Connection</h4>
+                    <p>Building bridges between creative professionals and mental health resources</p>
+                </div>
+                <div class="value-card">
+                    <h4>💚 Empathy</h4>
+                    <p>Understanding the unique challenges faced by creative minds</p>
+                </div>
+                <div class="value-card">
+                    <h4>🌱 Growth</h4>
+                    <p>Supporting personal and professional development through wellness</p>
+                </div>
+                <div class="value-card">
+                    <h4>✨ Hope</h4>
+                    <p>Inspiring optimism and resilience in the creative community</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
