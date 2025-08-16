@@ -1,409 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empathy-Driven Design Workshop - Presentation Template</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #303636;
-            background: linear-gradient(135deg, #E5E3DC 0%, #F8F6F0 100%);
-        }
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Empathy-Driven Design Workshop - Presentation Template</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
 
-        /* Back to Portfolio Link */
-        .back-link {
-            display: inline-block;
-            margin: 20px 0 0 20px;
-            padding: 8px 14px;
-            background: #495A58;
-            color: white;
-            text-decoration: none;
-            font-size: 0.9rem;
-            border-radius: 5px;
-            transition: background 0.3s ease;
-        }
+    :root{
+      --ink:#303636;
+      --sub:#666;
+      --bg1:#E5E3DC;
+      --bg2:#F8F6F0;
+      --sage:#495A58;
+      --sage-2:#3A4746;
+      --clay:#D4967D;
+      --clay-2:#C8856B;
+      --card:#fff;
+      --shadow:0 10px 30px rgba(0,0,0,.1);
+      --shadow-lg:0 15px 35px rgba(0,0,0,.2);
+      --radius:20px;
+    }
 
-        .back-link:hover {
-            background: #D4967D;
-        }
-        
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        
-        .hero {
-            text-align: center;
-            margin-bottom: 60px;
-            padding: 60px 40px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .personal-logo-space {
-            width: 400px;
-            height: 230px;
-            margin: 0 auto 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-        
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #D4967D, #495A58);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 700;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            color: #666;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .template-overview {
-            background: white;
-            padding: 50px 40px;
-            border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            margin-bottom: 60px;
-        }
-        
-        .overview-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        
-        .overview-item {
-            padding: 25px;
-            background: linear-gradient(135deg, #F8F6F0, #E5E3DC);
-            border-radius: 12px;
-            border-left: 4px solid #D4967D;
-        }
-        
-        .overview-item h3 {
-            color: #495A58;
-            font-size: 1.2rem;
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
-        
-        .overview-item p {
-            color: #666;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-        
-        .slides-showcase {
-            display: grid;
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-        
-        .slide-section {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-        
-        .section-header {
-            padding: 30px 40px;
-            background: linear-gradient(135deg, #495A58, #3A4746);
-            color: white;
-        }
-        
-        .section-header h2 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-        
-        .section-header p {
-            opacity: 0.9;
-            font-size: 1rem;
-        }
-        
-        .section-content {
-            padding: 40px;
-        }
-        
-        .slide-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-        
-        .slide-preview {
-            background: #F8F6F0;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            aspect-ratio: 16/9;
-            position: relative;
-            cursor: pointer;
-        }
-        
-        .slide-preview:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-        }
-        
-        .slide-content {
-            padding: 30px;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: relative;
-        }
-        
-        .slide-title {
-            background: linear-gradient(135deg, #495A58, #3A4746);
-            color: white;
-            padding: 15px 20px;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            font-size: 1rem;
-            font-weight: 600;
-        }
-        
-        .slide-body {
-            margin-top: 60px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        
-        .slide-number {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            color: rgba(255,255,255,0.7);
-            font-size: 0.8rem;
-        }
-        
-        /* Title Slide */
-        .title-slide {
-            background: linear-gradient(135deg, #D4967D, #C8856B);
-            color: white;
-            text-align: center;
-        }
-        
-        .title-slide .slide-content {
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .title-slide h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-        
-        .title-slide p {
-            font-size: 1rem;
-            opacity: 0.9;
-            margin-bottom: 20px;
-        }
-        
-        .title-slide .presenter {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-        
-        /* Content Slide */
-        .content-slide h4 {
-            color: #495A58;
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-        
-        .content-slide ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .content-slide li {
-            padding: 8px 0;
-            padding-left: 20px;
-            position: relative;
-            color: #666;
-            font-size: 0.95rem;
-        }
-        
-        .content-slide li:before {
-            content: "•";
-            color: #D4967D;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-        
-        /* Chart Slide */
-        .chart-slide {
-            position: relative;
-        }
-        
-        .chart-placeholder {
-            width: 100%;
-            height: 120px;
-            background: linear-gradient(135deg, #495A58, #3A4746);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 0.9rem;
-            margin-top: 15px;
-        }
-        
-        .chart-slide h4 {
-            color: #495A58;
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-        
-        .chart-slide p {
-            color: #666;
-            font-size: 0.85rem;
-            margin-bottom: 15px;
-        }
-        
-        /* Quote Slide */
-        .quote-slide {
-            background: linear-gradient(135deg, #495A58, #3A4746);
-            color: white;
-            text-align: center;
-        }
-        
-        .quote-slide .slide-content {
-            justify-content: center;
-        }
-        
-        .quote-slide blockquote {
-            font-size: 1.3rem;
-            font-style: italic;
-            margin-bottom: 20px;
-            line-height: 1.4;
-        }
-        
-        .quote-slide cite {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-        
-        /* Template Features */
-        .template-features {
-            background: linear-gradient(135deg, #495A58, #3A4746);
-            color: white;
-            padding: 50px 40px;
-            border-radius: 20px;
-            margin-top: 60px;
-        }
-        
-        .template-features h2 {
-            font-size: 2rem;
-            margin-bottom: 25px;
-            text-align: center;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-        
-        .feature-item {
-            background: rgba(255,255,255,0.1);
-            padding: 25px;
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
-        }
-        
-        .feature-item h4 {
-            color: #D4967D;
-            margin-bottom: 12px;
-            font-size: 1.1rem;
-        }
-        
-        .feature-item p {
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-        
-        .slide-types {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-        
-        .slide-type {
-            background: #F8F6F0;
-            padding: 25px;
-            border-radius: 12px;
-            border-left: 4px solid #D4967D;
-        }
-        
-        .slide-type h4 {
-            color: #495A58;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-        
-        .slide-type p {
-            color: #666;
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-        
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .container { padding: 20px 15px; }
-            .section-content { padding: 25px; }
-            .slide-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+    body{
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height:1.6; color:var(--ink);
+      background:linear-gradient(135deg, var(--bg1) 0%, var(--bg2) 100%);
+    }
+
+    /* Back link */
+    .back-link{
+      display:inline-block; margin:20px 0 0 20px; padding:8px 14px;
+      background:var(--sage); color:#fff; text-decoration:none; font-size:.9rem;
+      border-radius:6px; transition:background .25s ease; outline:none;
+    }
+    .back-link:hover{ background:var(--clay); }
+    .back-link:focus-visible{ box-shadow:0 0 0 3px rgba(212,150,125,.35); }
+
+    .container{ max-width:1400px; margin:0 auto; padding:40px 20px; }
+
+    .hero{
+      text-align:center; margin-bottom:60px; padding:60px 40px;
+      background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow);
+    }
+
+    .personal-logo-space{
+      width:400px; height:230px; margin:0 auto 30px;
+      display:flex; align-items:center; justify-content:center; position:relative;
+    }
+
+    .hero h1{
+      font-size:2.8rem; margin-bottom:20px; font-weight:700;
+      background:linear-gradient(135deg, var(--clay), var(--sage));
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+    }
+
+    .hero p{ font-size:1.2rem; color:var(--sub); max-width:800px; margin:0 auto; }
+
+    .template-overview{
+      background:var(--card); padding:50px 40px; border-radius:var(--radius);
+      box-shadow:0 8px 25px rgba(0,0,0,.1); margin-bottom:60px;
+    }
+
+    .overview-grid{
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px;
+    }
+
+    .overview-item{
+      padding:25px; background:linear-gradient(135deg, var(--bg2), var(--bg1));
+      border-radius:12px; border-left:4px solid var(--clay);
+    }
+
+    .overview-item h3{ color:var(--sage); font-size:1.2rem; margin-bottom:12px; font-weight:600; }
+    .overview-item p{ color:var(--sub); font-size:.95rem; }
+
+    .slides-showcase{ display:grid; gap:40px; margin-bottom:60px; }
+
+    .slide-section{
+      background:var(--card); border-radius:var(--radius); box-shadow:0 8px 25px rgba(0,0,0,.1); overflow:hidden;
+    }
+
+    .section-header{
+      padding:30px 40px; color:#fff; background:linear-gradient(135deg, var(--sage), var(--sage-2));
+    }
+    .section-header h2{ font-size:1.8rem; margin-bottom:10px; }
+    .section-header p{ opacity:.9; }
+
+    .section-content{ padding:40px; }
+
+    .slide-grid{
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(350px,1fr)); gap:30px; margin-top:30px;
+    }
+
+    .slide-preview{
+      background:var(--bg2); border-radius:15px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,.1);
+      transition:transform .3s ease, box-shadow .3s ease; aspect-ratio:16/9; position:relative; cursor:pointer;
+    }
+    .slide-preview:hover{ transform:translateY(-5px); box-shadow:var(--shadow-lg); }
+
+    .slide-content{ padding:30px; height:100%; display:flex; flex-direction:column; justify-content:center; position:relative; }
+    .slide-title{
+      background:linear-gradient(135deg, var(--sage), var(--sage-2)); color:#fff;
+      padding:15px 20px; position:absolute; top:0; left:0; right:0; font-size:1rem; font-weight:600;
+    }
+    .slide-number{ position:absolute; top:15px; right:20px; color:rgba(255,255,255,.7); font-size:.8rem; }
+    .slide-body{ margin-top:60px; display:flex; flex-direction:column; gap:10px; }
+
+    /* Specific slide looks */
+    .title-slide{ background:linear-gradient(135deg, var(--clay), var(--clay-2)); color:#fff; text-align:center; }
+    .title-slide .slide-content{ align-items:center; justify-content:center; }
+    .title-slide h3{ font-size:1.8rem; margin-bottom:12px; font-weight:700; }
+    .title-slide p{ opacity:.9; }
+    .title-slide .presenter{ font-size:.9rem; opacity:.85; }
+
+    .content-slide h4{ color:var(--sage); font-size:1.3rem; margin-bottom:12px; font-weight:600; }
+    .content-slide ul{ list-style:none; }
+    .content-slide li{ position:relative; padding-left:18px; color:var(--sub); margin:6px 0; }
+    .content-slide li::before{ content:"•"; position:absolute; left:0; color:var(--clay); font-weight:700; }
+
+    .chart-slide h4{ color:var(--sage); font-size:1.2rem; margin-bottom:8px; }
+    .chart-slide p{ color:var(--sub); font-size:.85rem; }
+    .chart-placeholder{
+      width:100%; height:120px; border-radius:8px; margin-top:12px;
+      color:#fff; display:flex; align-items:center; justify-content:center;
+      background:linear-gradient(135deg, var(--sage), var(--sage-2));
+      font-size:.9rem;
+    }
+
+    .quote-slide{ background:linear-gradient(135deg, var(--sage), var(--sage-2)); color:#fff; text-align:center; }
+    .quote-slide .slide-content{ justify-content:center; }
+    .quote-slide blockquote{ font-size:1.3rem; font-style:italic; margin-bottom:16px; line-height:1.4; }
+    .quote-slide cite{ font-size:.9rem; opacity:.85; }
+
+    /* Template features */
+    .template-features{
+      background:linear-gradient(135deg, var(--sage), var(--sage-2)); color:#fff;
+      padding:50px 40px; border-radius:var(--radius); margin-top:60px;
+    }
+    .template-features h2{ font-size:2rem; margin-bottom:25px; text-align:center; }
+    .features-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px; margin-top:30px; }
+    .feature-item{ background:rgba(255,255,255,.1); padding:25px; border-radius:12px; backdrop-filter:blur(10px); }
+    .feature-item h4{ color:var(--clay); margin-bottom:10px; font-size:1.1rem; }
+
+    /* Slide types list */
+    .slide-types{ display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:25px; margin-top:30px; }
+    .slide-type{ background:var(--bg2); padding:25px; border-radius:12px; border-left:4px solid var(--clay); }
+    .slide-type h4{ color:var(--sage); margin-bottom:8px; font-size:1.05rem; }
+    .slide-type p{ color:var(--sub); font-size:.9rem; }
+
+    @media (max-width:768px){
+      .hero h1{ font-size:2.2rem; }
+      .container{ padding:20px 15px; }
+      .section-content{ padding:25px; }
+      .slide-grid{ grid-template-columns:1fr; }
+      .personal-logo-space{ width:300px; height:180px; }
+    }
+    @media (prefers-reduced-motion:reduce){ *{ transition:none !important; } }
+  </style>
 </head>
 <body>
 
-    <a href="portfolio.html" class="back-link">← Back to Portfolio</a>
+  <!-- Back to Portfolio (same tab, points to index.html) -->
+  <a href="index.html" class="back-link">← Back to Portfolio</a>
 
-    <div class="container">
-        <div class="hero">
-            <div class="personal-logo-space">
-                <img src="https://i.imgur.com/LxgORdC.png" alt="Your Name - Designer" style="width: 100%; height: 100%; object-fit: contain;">
+  <div class="container">
+    <header class="hero">
+      <div class="personal-logo-space">
+        <img src="https://i.imgur.com/LxgORdC.png"
+             alt="Hearts & Minds Foundation logo"
+             style="width:100%;height:100%;object-fit:contain;">
+      </div>
+      <h1>Empathy-Driven Design Workshop</h1>
+      <p>Professional presentation template — a complete slide system for teams teaching human-centered methodology and emotional intelligence in creative work.</p>
+    </header>
+
+    <!-- Overview -->
+    <section class="template-overview" aria-label="Template overview">
+      <div class="overview-grid">
+        <article class="overview-item">
+          <h3>Workshop Goal</h3>
+          <p>Equip designers with practical, empathy-first tools that improve collaboration, research synthesis, and decision-making.</p>
+        </article>
+        <article class="overview-item">
+          <h3>Audience</h3>
+          <p>Designers, researchers, product managers, and agency teams working on human-centered digital products.</p>
+        </article>
+        <article class="overview-item">
+          <h3>Deliverable</h3>
+          <p>Editable slide deck with title, agenda, content, charts, exercises, quotes, and recap templates.</p>
+        </article>
+        <article class="overview-item">
+          <h3>Outcomes</h3>
+          <p>Shared vocabulary, repeatable activities, and measurable improvements in user empathy and team alignment.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Slides preview -->
+    <section class="slide-section" aria-label="Slide previews">
+      <div class="section-header">
+        <h2>Slide Previews</h2>
+        <p>Key layouts included in the template.</p>
+      </div>
+      <div class="section-content">
+        <div class="slide-grid">
+
+          <!-- Title slide -->
+          <figure class="slide-preview title-slide" role="img" aria-label="Title slide: Empathy-Driven Design">
+            <div class="slide-content">
+              <div class="slide-number">1</div>
+              <h3>Empathy-Driven Design</h3>
+              <p>Building products that understand people</p>
+              <div class="presenter">Presented by: Danielle Salinetro</div>
             </div>
-            <h1>Empathy-Driven Design Workshop</h1>
-            <p>Professional Presentation Template - Complete slide system for design agencies teaching human-centered methodology and emotional intelligence in creative work.</p>
-        </div>
+          </figure>
 
-        <!-- The rest of your content remains exactly the same -->
-        <!-- ... -->
-    </div>
+          <!-- Agenda / content -->
+          <figure class="slide-preview content-slide" role="img" aria-label="Content slide: Workshop agenda">
+            <div class="slide-title">Workshop Agenda</div>
+            <div class="slide-number">2</div>
+            <div class="slide-content">
+              <div class="slide-body">
+                <h4>Today’s Topics</h4>
+                <ul>
+                  <li>Empathy vs. sympathy (and why it matters)</li>
+                  <li>Listening frameworks &amp; interview prompts</li>
+                  <li>Empathy mapping activity</li>
+                  <li>Translating insights into design decisions</li>
+                </ul>
+              </div>
+            </div>
+          </figure>
+
+          <!-- Chart slide -->
+          <figure class="slide-preview chart-slide" role="img" aria-label="Chart slide placeholder: research to decision pipeline">
+            <div class="slide-title">Research → Decisions</div>
+            <div class="slide-number">7</div>
+            <div class="slide-content">
+              <h4>From Signals to Strategy</h4>
+              <p>Show how qualitative insights ladder up to product choices.</p>
+              <div class="chart-placeholder">Insert chart/diagram here</div>
+            </div>
+          </figure>
+
+          <!-- Exercise / activity -->
+          <figure class="slide-preview content-slide" role="img" aria-label="Exercise slide: empathy mapping">
+            <div class="slide-title">Exercise: Empathy Mapping</div>
+            <div class="slide-number">10</div>
+            <div class="slide-content">
+              <div class="slide-body">
+                <h4>Instructions</h4>
+                <ul>
+                  <li>Pair up and select a recent user story.</li>
+                  <li>Fill in Think/Feel/Say/Do quadrants.</li>
+                  <li>Identify pains &amp; opportunities.</li>
+                  <li>Share back a single design change.</li>
+                </ul>
+              </div>
+            </div>
+          </figure>
+
+          <!-- Quote slide -->
+          <figure class="slide-preview quote-slide" role="img" aria-label="Quote slide">
+            <div class="slide-content">
+              <div class="slide-number">14</div>
+              <blockquote>“Design isn’t finished until someone is helped.”</blockquote>
+              <cite>— Brenda Laurel</cite>
+            </div>
+          </figure>
+
+          <!-- Recap / next steps -->
+          <figure class="slide-preview content-slide" role="img" aria-label="Recap slide: next steps">
+            <div class="slide-title">Recap &amp; Next Steps</div>
+            <div class="slide-number">18</div>
+            <div class="slide-content">
+              <div class="slide-body">
+                <h4>What to Practice</h4>
+                <ul>
+                  <li>Run 1 empathy interview this week.</li>
+                  <li>Create a one-page empathy map per persona.</li>
+                  <li>Propose one workflow change based on findings.</li>
+                </ul>
+              </div>
+            </div>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Template features -->
+    <section class="template-features" aria-label="Template features">
+      <h2>Template Features</h2>
+      <div class="features-grid">
+        <div class="feature-item">
+          <h4>Fully Editable</h4>
+          <p>Swap colors, typography, and components while preserving layout rhythm and spacing.</p>
+        </div>
+        <div class="feature-item">
+          <h4>Workshop-Ready</h4>
+          <p>Includes agenda, exercises, timers, recap, and resources slides to run sessions end-to-end.</p>
+        </div>
+        <div class="feature-item">
+          <h4>Accessible by Design</h4>
+          <p>High contrast, clear hierarchy, and motion-safe interactions help every participant focus.</p>
+        </div>
+        <div class="feature-item">
+          <h4>Brandable</h4>
+          <p>Hearts &amp; Minds visual language integrated, with tokens you can retheme for any client.</p>
+        </div>
+      </div>
+
+      <div class="slide-types">
+        <div class="slide-type">
+          <h4>Title &amp; Section Breaks</h4>
+          <p>Bold openings and clear transitions to pace multi-hour workshops.</p>
+        </div>
+        <div class="slide-type">
+          <h4>Content &amp; Lists</h4>
+          <p>Readable content blocks with bullet variants for step-by-step teaching.</p>
+        </div>
+        <div class="slide-type">
+          <h4>Charts &amp; Diagrams</h4>
+          <p>Plug in frameworks, funnels, and timelines to visualize decisions.</p>
+        </div>
+        <div class="slide-type">
+          <h4>Activities &amp; Prompts</h4>
+          <p>Pre-structured exercises with instructions and space for outcomes.</p>
+        </div>
+      </div>
+    </section>
+  </div>
 </body>
 </html>
