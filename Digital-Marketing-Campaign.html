@@ -325,6 +325,16 @@
     @media (prefers-reduced-motion: reduce){
       * { transition: none !important; }
     }
+    /* Remove blue link underlines */
+a {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+a:hover {
+  color: var(--clay);
+  text-decoration: underline;
+}
   </style>
 </head>
 <body>
@@ -516,3 +526,4 @@
   </div>
 </body>
 </html>
+
